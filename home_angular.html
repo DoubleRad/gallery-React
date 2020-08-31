@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body ng-app="mainApp">
+    <div class="add_form_parrent hidden" id="inputpanel">
+        <div class="add_form">
+            <form method="POST" action="upload" enctype="multipart/form-data" class="form1">
+                <textarea type="textarea" name="galdescription" class="desc_area" placeholder="описание"></textarea>
+                <input type="file" name="galfile" hidden id="uploadfile">
+                <input type="submit" value="Отправить" hidden id="submitbtn">
+                    <label for="uploadfile" class="updbtn just_cent btnhover btn"><span class="icon1">загрузить</span></label>
+                    <label for="submitbtn" class="sbmbtn just_cent btnhover btn"><span class="icon2">отправить</span></label>
+            </form>
+        </div>
+        <div class="add_form_parrent_after" id="showbtn"></div>
+    </div>
+    
+    <div class="galcontainer">
+        <gallery></gallery>
+    </div>
+    
+
+
+    <script src="/node_modules/angular/angular.min.js"></script>
+
+
+    <script>
+        function show(){
+            var btn = document.getElementById('showbtn');
+            var obj = document.getElementById('inputpanel');
+
+            btn.addEventListener('click' , ()=>{
+                obj.classList.toggle('hidden')
+            })
+        }
+
+        show();
+
+        angular.module("mainApp" , [])
+        .directive ("gallery" , ()=>{
+            return{
+                restrict: "E",
+                replace: true,
+                templateUrl: "gallery.html",
+                controller: function( $scope , $http ){
+                    $scope.files = [ ];
+                    $http.get( '/files' )
+                    .then( resp => {
+                        $scope.files = resp.data;
+                    })
+                }
+            }
+        })
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+
+body,html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #4f704c;
+    background-image: url('https://image.freepik.com/free-photo/empty-school-board_23-2147849671.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+.gallery_padding{
+    text-align: center;
+    padding-top: 100px;
+}
+
+.galleryImg{
+    height: 150px;
+    width: 200px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    font-size: 23px;
+}
+
+.gal-img{
+    display: inline-block;
+}
+
+.gal-img img{
+    max-width: 350px;
+    margin: 0 15px 0 15px;
+    display: inline-block;
+    border-radius: 15px;
+    box-shadow: 0 0 18px -2px #0f0f1ec9;
+}
+
+.img-box{
+    position: relative;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 15px 0 15px 0;
+}
+
+.img-box:hover .delete_btn{
+    opacity: 1;
+}
+
+.img-box:hover span{
+    opacity: 1;
+}
+
+.img-box::after{
+    content:'';
+    display: block;
+    position: absolute;
+    left: 42%;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    background-image: url(images/magn.png);
+    background-size: 130px;
+    background-position: 124px 51px;
+    border-radius: 50%;
+    box-shadow: 0 0 27px -1px #070c1ec2;
+}
+
+.img-box span{
+    box-sizing: border-box;
+    max-width: 329px;
+    padding: 5px;
+    border-radius: 5px;
+    left: 25px;
+    top: 10px;
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    transition: .2s;
+    opacity: 0;
+    box-shadow: 4px 4px 10px 2px #1c1a2254;
+    z-index: 10;
+}
+/*Кнопка удаления*/
+.delete_btn{
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    box-sizing: border-box;
+    padding:3px 6px;
+    border-radius: 10px;
+    background-color: #a51818;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    transition: .3s;
+    box-shadow: 0 0 10px 2px #1a1d31;
+}
+
+.delete_btn:hover{
+    filter:brightness(1.1);
+}
+.delete_btn:active{
+    transform: scale(0.95);
+}
+
+.add_form_parrent{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background-color: #f3f3f3;
+    background-image: url('images/plank.jpg');
+    background-size: 1328px;
+    background-position: 51% 37%;
+    box-shadow: 0 0 46px 22px #000000;
+    z-index: 20;
+    transition: .2s;
+}
+.hidden{
+    transform: translateY(-150px);
+}
+
+.add_form_parrent_after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -100px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    background-image:url('images/plank.jpg');
+    background-size: 1300px;
+    background-position: 0px 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: .1s;
+}
+.add_form_parrent_after:hover{
+    filter: brightness(1.4);
+}
+.add_form_parrent_after::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: calc(50% - 50px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    background-image:url('images/str.png');
+    background-size: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert();
+    opacity: 50%;
+}
+
+.add_form{
+    box-sizing: border-box;
+    padding: 10px;
+    display: inline-block;
+    height: 100%;
+    width: 600px;
+}
+
+.desc_area{
+    vertical-align: top;
+    display: inline-block;
+    height: 125px;
+    width: 50%;
+}
+
+.updbtn{
+    display: flex;
+    height: 132px;
+    width: 25%;
+}
+
+.sbmbtn{
+    display: flex;
+    height: 132px;
+    width: 25%;
+    
+}
+.btn{
+    cursor: pointer;
+    background-color: #213a1f;
+    opacity: 90%;
+    color: #aecaae; 
+    transition: 0.15s;
+    box-sizing: border-box;
+}
+.btn span{
+    position: relative;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.icon1{
+    left: -12px;
+}
+.btn:hover{
+    opacity: 100%;
+    background-color: #3b5c38;
+}
+.btn:active{
+    background-color: #5c7b5a;
+}
+
+.just_cent{
+    justify-content: center;
+    align-items: center;
+}
+
+.form1{
+    vertical-align: top;
+    display:  flex;
+    width: 100%;
+}
+
+.icon1::after{
+    content: '';
+    position: absolute;
+    right: -26px;
+    top: -2px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    background-image: url('images/iconUpd.png');
+    background-position: center;
+    background-size: cover;
+    filter: invert();
+}
+
+.galcontainer{
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-top: 100px;
+
+    background-image: url('images/fon.jpg');
+    background-size: cover;
+    background-position: center;
+}
+

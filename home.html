@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div class="add_form_parrent hidden" id="inputpanel">
+        <div class="add_form">
+            <form method="POST" action="upload" enctype="multipart/form-data" class="form1">
+                <textarea type="textarea" name="galdescription" class="desc_area" placeholder="описание"></textarea>
+                <input type="file" name="galfile" hidden id="uploadfile">
+                <input type="submit" value="Отправить" hidden id="submitbtn">
+                    <label for="uploadfile" class="updbtn just_cent btnhover btn"><span class="icon1">загрузить</span></label>
+                    <label for="submitbtn" class="sbmbtn just_cent btnhover btn"><span class="icon2">отправить</span></label>
+            </form>
+        </div>
+        <div class="add_form_parrent_after" id="showbtn"></div>
+    </div>
+    
+    <div id='gallery'>
+        
+    </div>
+    
+
+
+    <script src="/node_modules/angular/angular.min.js"></script>
+
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <script src="reactJs/react.development.js"></script>
+    <script src="reactJs/react-dom.development.js"></script>
+    <script type="text/babel" src='my.js'></script>
+
+
+</body>
+</html>
